@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="http://localhost:8000/theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<meta name="author" content="Abdul Malik Ibikunle" />
+<meta name="description" content="Infrastructure as Code (IaC) with Terraform allows DevOps teams to define, manage, and scale infrastructure in a repeatable and reliable way. But writing Terraform isn’t just about “making it work”—it’s about making it consistent, secure, and easy to maintain. Here are some best practices that will help …" />
+<meta name="keywords" content="">
+
+
+  <meta property="og:site_name" content="malikblog"/>
+  <meta property="og:title" content="Terraform Best Practices"/>
+  <meta property="og:description" content="Infrastructure as Code (IaC) with Terraform allows DevOps teams to define, manage, and scale infrastructure in a repeatable and reliable way. But writing Terraform isn’t just about “making it work”—it’s about making it consistent, secure, and easy to maintain. Here are some best practices that will help …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="http://localhost:8000/terraform-best-practices.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2025-08-19 00:00:00+02:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="http://localhost:8000/author/abdul-malik-ibikunle.html">
+  <meta property="article:section" content="Blog"/>
+  <meta property="og:image" content="">
+
+  <title>malikblog &ndash; Terraform Best Practices</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="http://localhost:8000/">
+      <img src="http://localhost:8000/theme/img/profile.png" alt="Abdulmalik Ibikunle" title="Abdulmalik Ibikunle">
+    </a>
+
+    <h1>
+      <a href="http://localhost:8000/">Abdulmalik Ibikunle</a>
+    </h1>
+
+    <p>DevOps Engineer</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="http://localhost:8000/pages/about.html#about">
+                About Me
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-linkedin"
+           href="https://www.linkedin.com/in/abdulmalik-ibikunle-8a6894177/"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-github"
+           href="https://github.com/malikhq"
+           target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a class="sc-twitter"
+           href="https://x.com/malik0x"
+           target="_blank">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+
+<article class="single">
+  <header>
+      
+    <h1 id="terraform-best-practices">Terraform Best Practices</h1>
+    <p>
+      Posted on Tue 19 August 2025 in <a href="http://localhost:8000/category/blog.html">Blog</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Infrastructure as Code (IaC) with <strong>Terraform</strong> allows DevOps teams to define, manage, and scale infrastructure in a repeatable and reliable way.<br>
+But writing Terraform isn’t just about “making it work”—it’s about making it <strong>consistent, secure, and easy to maintain</strong>.  </p>
+<p>Here are some <strong>best practices</strong> that will help you level up your Terraform workflow:</p>
+<hr>
+<h2>1. Use Version Control (GitOps Mindset)</h2>
+<ul>
+<li>Always keep Terraform code in a <strong>Git repository</strong>.  </li>
+<li>Follow a <strong>branching strategy</strong> (e.g., <code>main</code>, <code>develop</code>, feature branches).  </li>
+<li>Use <strong>pull requests</strong> for code reviews before merging infrastructure changes.  </li>
+</ul>
+<hr>
+<h2>2. Keep Code Modular</h2>
+<ul>
+<li>Break large Terraform files into <strong>modules</strong> (e.g., VPC, EC2, RDS).  </li>
+<li>Reuse modules across environments (dev, staging, prod).  </li>
+<li>Publish reusable modules in a private registry or a Git repo.  </li>
+</ul>
+<hr>
+<h2>3. Naming Conventions &amp; Tags</h2>
+<ul>
+<li>Use a <strong>consistent naming convention</strong> for resources (e.g., <code>project-env-role</code>).  </li>
+<li>Apply tags like <code>Owner</code>, <code>Environment</code>, and <code>CostCenter</code> for better governance and cost tracking.  </li>
+</ul>
+<hr>
+<h2>4. Remote State Management</h2>
+<ul>
+<li>Never store Terraform state files (<code>terraform.tfstate</code>) locally.  </li>
+<li>Use a <strong>remote backend</strong> (e.g., S3 + DynamoDB, GCS, or Terraform Cloud) for team collaboration.  </li>
+<li>Enable <strong>state locking</strong> to prevent conflicts.  </li>
+</ul>
+<hr>
+<h2>5. Secrets Management</h2>
+<ul>
+<li>Don’t hardcode secrets in Terraform files.  </li>
+<li>Store credentials in a <strong>secret manager</strong> (e.g., HashiCorp Vault, AWS Secrets Manager).  </li>
+<li>Use variables and reference secrets securely.  </li>
+</ul>
+<hr>
+<h2>6. Linting &amp; Formatting</h2>
+<ul>
+<li>Run <code>terraform fmt</code> to keep code formatting consistent.  </li>
+<li>Use <code>terraform validate</code> to catch errors early.  </li>
+<li>Integrate <strong>static analysis tools</strong> like <a href="https://www.checkov.io/">Checkov</a> or <code>tflint</code> into CI/CD pipelines.  </li>
+</ul>
+<hr>
+<h2>7. Plan Before Apply</h2>
+<ul>
+<li>Always run <code>terraform plan</code> before <code>terraform apply</code>.  </li>
+<li>Review changes carefully, especially in production environments.  </li>
+<li>Consider using <strong>approval workflows</strong> (e.g., GitHub Actions, GitLab CI, Jenkins) before applying changes.  </li>
+</ul>
+<hr>
+<h2>8. Manage Environments Properly</h2>
+<ul>
+<li>Separate <strong>state files</strong> for different environments (<code>dev</code>, <code>staging</code>, <code>prod</code>).  </li>
+<li>Avoid using the same state file across environments.  </li>
+<li>Use <strong>workspaces</strong> only for truly identical environments.  </li>
+</ul>
+<hr>
+<h2>9. Documentation &amp; Collaboration</h2>
+<ul>
+<li>Document modules with clear <strong>README.md</strong> files.  </li>
+<li>Use <strong>variable descriptions</strong> and examples for easy onboarding.  </li>
+<li>Share knowledge across the team to avoid “single point of failure.”  </li>
+</ul>
+<hr>
+<h2>10. Security &amp; Least Privilege</h2>
+<ul>
+<li>Follow the <strong>principle of least privilege</strong> for IAM roles.  </li>
+<li>Rotate credentials regularly.  </li>
+<li>Use <strong>policy-as-code</strong> tools (like OPA or Sentinel) to enforce security rules.  </li>
+</ul>
+<hr>
+<h3>Final Thoughts</h3>
+<p>Terraform is powerful, but with great power comes the need for discipline.<br>
+By following these best practices—<strong>modular code, remote state, security-first design, and automated checks</strong>—you’ll ensure your infrastructure is reliable, maintainable, and secure.  </p>
+<hr>
+<p>💡 <em>Tip: Start small by adding linting (<code>terraform fmt</code>, <code>tflint</code>) and remote state, then evolve into modules, GitOps, and CI/CD workflows.</em>  </p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " malikblog ",
+  "url" : "http://localhost:8000",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>
