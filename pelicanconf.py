@@ -1,7 +1,7 @@
 AUTHOR = 'Malik'
 SITENAME = 'malikblog'
 SITEURL = 'Malik Ibikunle'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'https://malikblogsite.netlify.app/'
 SITETITLE = 'Abdulmalik Ibikunle'
 SITESUBTITLE = 'DevOps Engineer'
 
