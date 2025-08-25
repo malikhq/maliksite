@@ -34,7 +34,9 @@ MAIN_MENU = True
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
-             ('Tags', '/tags.html'),)
+             ('Tags', '/tags.html'),
+             ('Portfolio', '/portfolio.html'),)
+             
 
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"

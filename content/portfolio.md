@@ -2,7 +2,7 @@ Title: My Portfolio
 Date: 2025-08-25
 Category: Portfolio
 Slug: portfolio
-Summary: A showcase of Abdul Malik Ibikunle’s DevOps and Cloud Engineering projects, demonstrating expertise in automation, CI/CD, Kubernetes, observability, and infrastructure as code.
+Summary: A showcase of my DevOps and Cloud Engineering projects, demonstrating expertise in automation, CI/CD, Kubernetes, observability, and infrastructure as code.
 
 
 Welcome to my portfolio!  
