@@ -31,6 +31,7 @@ DEFAULT_PAGINATION = 5
 THEME = "themes/Flex"
 
 # Menu items
+MAIN_MENU = True
 MENUITEMS = (
     ("About", "/pages/about.html"),
     ("Portfolio", "/pages/portfolio.html"),
