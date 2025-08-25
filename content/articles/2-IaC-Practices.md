@@ -1,6 +1,3 @@
-Here’s your content rewritten as a proper **Markdown (`.md`) file** for Pelican, with the right metadata front matter and clean formatting:
-
-```markdown
 Title: Terraform Like a Pro: 5 Game-Changing IaC Practices
 Date: 2025-08-25
 Category: Blog
@@ -62,11 +59,3 @@ Keep it clear, secure, and reliable.
 **What’s your go-to Terraform best practice?**
 
 ---
-
-**Hashtags:**  
-`#Terraform #DevOps #InfrastructureAsCode #CloudEngineering #Automation #Security #PlatformEngineering`
-```
-
-This will render cleanly in Pelican with proper headings, bullet points, links, and metadata for SEO and categorization.
-
-👉 Do you also want me to add **syntax-highlighted code examples** (e.g., `terraform fmt` usage blocks) so it looks richer in your blog post?
