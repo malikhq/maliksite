@@ -32,11 +32,17 @@ THEME = "themes/Flex"
 
 # Menu items
 MAIN_MENU = True
+
 MENUITEMS = (
-    ("About", "/pages/about.html"),
-    ("Portfolio", "/pages/portfolio.html"),
-    ("Blog", "/category/blog.html"),
+    ("Home", "/"),
+    ("Archives", "/archives.html"),
+    ("Categories", "/categories.html"),
+    ("Tags", "/tags.html"),
+    ("Atom", "/feeds/all.atom.xml"),
 )
+
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 
 STATIC_PATHS = ['images', 'files']
