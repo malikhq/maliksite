@@ -1,6 +1,5 @@
 AUTHOR = 'Malik'
 SITENAME = 'malikblog'
-SITEURL = 'Malik Ibikunle'
 SITEURL = 'https://malikblogsite.netlify.app/'
 SITETITLE = 'Abdulmalik Ibikunle'
 SITESUBTITLE = 'DevOps Engineer'
@@ -40,3 +39,4 @@ MENUITEMS = (
 
 
 STATIC_PATHS = ['images', 'files']
+PYGMENTS_STYLE = 'monokai'
